@@ -1,0 +1,43 @@
+#!/bin/bash
+
+#cpp_utility new <class>
+
+if [ "$1" != "new" ]; then
+	exit
+fi
+
+CLASS_NAME="$2"
+H_FILENAME="$CLASS_NAME".h
+CPP_FILENAME="$CLASS_NAME".cpp
+UPPER_H_FILENAME=$(echo "$CLASS_NAME"_H | tr [a-z] [A-Z])
+UPPER_CPP_FILENAME=$(echo "$CLASS_NAME".cpp | tr [a-z] [A-Z])
+
+echo "create $H_FILENAME ..."
+touch "$H_FILENAME"
+echo -e \
+"#ifndef $UPPER_H_FILENAME\n"\
+"#define $UPPER_H_FILENAME\n"\
+"\n"\
+"class $CLASS_NAME\n"\
+"{\n"\
+"public:\n"\
+"\t$CLASS_NAME();\n"\
+"\t~$CLASS_NAME();\n"\
+"\n"\
+"private:\n"\
+"};\n"\
+"\n"\
+"#endif // $UPPER_H_FILENAME" > "$H_FILENAME"
+
+echo "create $CPP_FILENAME ..."
+touch "$CPP_FILENAME"
+echo -e \
+"#include \"$H_FILENAME\"\n"\
+"\n"\
+"$CLASS_NAME::$CLASS_NAME() \n"\
+"{\n"\
+"}\n"\
+"\n"\
+"$CLASS_NAME::~$CLASS_NAME() \n"\
+"{\n"\
+"}" > "$CPP_FILENAME"
