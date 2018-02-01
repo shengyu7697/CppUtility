@@ -1,8 +1,12 @@
 #!/bin/bash
 
-#cpp_utility new <class>
+function usage()
+{
+	echo "Usage: $0 new [class_name]"
+}
 
 if [ "$1" != "new" ]; then
+	usage
 	exit
 fi
 

@@ -17,11 +17,11 @@ $ cp cpp_utility ~/bin
 ## How to Use
 Usage  
 ```
-$ ./cpp_utility new <class>
+$ cpp_utility new [class_name]
 ```
 Enter below comand in console  
 ```
-$ ./cpp_utility new HelloWord
+$ cpp_utility new HelloWord
 ```
 
 ## System Requirement
