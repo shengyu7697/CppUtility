@@ -2,12 +2,12 @@
 
 function usage()
 {
-	echo "Usage: $0 new [class_name]"
+    echo "Usage: $0 new [class_name]"
 }
 
 if [ "$1" != "new" ]; then
-	usage
-	exit
+    usage
+    exit
 fi
 
 CLASS_NAME="$2"
@@ -25,8 +25,8 @@ echo -e \
 "class $CLASS_NAME\n"\
 "{\n"\
 "public:\n"\
-"\t$CLASS_NAME();\n"\
-"\t~$CLASS_NAME();\n"\
+"    $CLASS_NAME();\n"\
+"    ~$CLASS_NAME();\n"\
 "\n"\
 "private:\n"\
 "};\n"\
